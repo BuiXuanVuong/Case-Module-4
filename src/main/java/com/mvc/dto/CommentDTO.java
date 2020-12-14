@@ -4,9 +4,8 @@ package com.mvc.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentDTO {
+public class CommentDTO extends AbstractDTO<CommentDTO> {
 
-    private Long id;
 
     private Long userId;
 
@@ -14,15 +13,7 @@ public class CommentDTO {
 
     private String comment;
 
-    public Long getId() {
-        return id;
-    }
-
     private List<CommentDTO> listResult = new ArrayList<>();
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getUserId() {
         return userId;

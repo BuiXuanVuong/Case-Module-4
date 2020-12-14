@@ -232,7 +232,12 @@
                 <div class="be-img-comment">
                     <a href="blog-detail-2.html">
 <!--                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="be-ava-comment">-->
-                        <img style="width: 42px; height: 42px; border-radius: 50%" th:src="@{'http://localhost:8080/' + ${image}}" class="be-ava-comment">
+                        <th:block th:each="user : ${listUser}">
+                            <th:block th:if="${user.getId() == item.getUserId()}">
+                                <img style="width: 42px; height: 42px; border-radius: 50%" th:src="@{'http://localhost:8080/' + ${user.getImage()}}" class="be-ava-comment">
+                            </th:block>
+                        </th:block>
+
                     </a>
                 </div>
                 <div class="be-comment-content">
@@ -240,10 +245,16 @@
 <!--				<span class="be-comment-name">-->
 <!--					<a href="blog-detail-2.html">Ravi Sah</a>-->
 <!--					</span>-->
-                    <span class="be-comment-name" th:text="${fullName}"/>
+
+                    <th:block th:each="user : ${listUser}">
+                        <th:block th:if="${user.getId() == item.getUserId()}">
+                            <span class="be-comment-name" th:text="${user.getUserName()}"/>
+                        </th:block>
+                    </th:block>
                     <span class="be-comment-time">
 					<i class="fa fa-clock-o"></i>
-					May 27, 2015 at 3:14am
+                        <span th:text="${item.getModifiedDate()}"/>
+<!--					May 27, 2015 at 3:14am-->
 				</span>
 <!--                    <h3><span th:text="${item.comment}"/></h3>-->
                     <p th:text="${item.comment}" class="be-comment-text">
@@ -330,7 +341,12 @@
                         // window.location.href = "${editNewURL}?id="+result.id+"&message=insert_success";
                         console.log("ok add");
                         window.location.href = "/trang-chu/noi-dung/" + newId;
-
+                        var displayComment = "";
+                        displayComment += "<span>";
+                        displayComment += result.userName  + "</span> ";
+                        displayComment += "<span>"
+                        displayComment += comment + "</span> ";
+                        $("#allComment").html(displayComment);
                     },
                     error: function (error) {
                         // window.location.href = "${newURL}?page=1&limit=2&message=error_system";

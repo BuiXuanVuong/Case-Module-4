@@ -4,11 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user_new")
-public class CommentEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CommentEntity extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "userid")
@@ -21,13 +17,6 @@ public class CommentEntity {
     @Column(name = "comment", columnDefinition = "TEXT")
     private String comment;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public UserEntity getUserEntity() {
         return userEntity;

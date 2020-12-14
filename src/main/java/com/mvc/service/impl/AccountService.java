@@ -5,6 +5,8 @@ import com.mvc.repository.UserRepository;
 import com.mvc.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
+
 
 import java.util.Optional;
 
@@ -17,6 +19,7 @@ public class AccountService implements IAccountService {
     public Iterable<UserEntity> findAll() {
         return userRepository.findAll();
     }
+
 
     public Optional<UserEntity> findById(Long id) {
         return userRepository.findById(id);

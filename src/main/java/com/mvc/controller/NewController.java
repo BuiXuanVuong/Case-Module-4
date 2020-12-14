@@ -2,6 +2,7 @@ package com.mvc.controller;
 
 import com.mvc.dto.CommentDTO;
 import com.mvc.dto.NewDTO;
+import com.mvc.entity.UserEntity;
 import com.mvc.service.IAccountService;
 import com.mvc.service.INewService;
 import com.mvc.service.impl.CommentService;
@@ -20,6 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @Controller(value = "newControllerOfWeb")
 public class NewController {
@@ -41,13 +45,24 @@ public class NewController {
         CommentDTO model = new CommentDTO();
         NewDTO newDTO = newService.findById(id);
         mav.addObject("newDTO", newDTO);
+        List<UserEntity> listUserEntity = new ArrayList<>();
+
+
+        final List<UserEntity> userEntityList = new LinkedList<>();
+
+        Iterable<UserEntity> iterableUser = accountService.findAll();
+        iterableUser.forEach(userEntityList::add);
+        mav.addObject("listUser", userEntityList);
+
         model.setListResult(commentService.getAllByNewId(id));
+//        System.out.println("NewController row 58 " + model.getListResult().get(0).getModifiedDate());
         if(RoleUtil.checkRole().size() > 0) {
             mav.addObject("fullName", RoleUtil.checkRole().get(0));
             mav.addObject("author", RoleUtil.checkRole().get(1));
             mav.addObject("userId",RoleUtil.checkRole().get(2));
             mav.addObject("image", RoleUtil.checkRole().get(3));
         }
+
         mav.addObject("model", model);
         return mav;
 
