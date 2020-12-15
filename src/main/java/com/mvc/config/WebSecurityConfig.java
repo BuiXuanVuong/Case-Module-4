@@ -48,9 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/quan-tri/trang-chu")//
                 .access("hasAnyRole('ROLE_MANAGER')")
                 .antMatchers("/login", "/").permitAll()
-                .antMatchers("/quan-tri/trang-chu").access("hasAnyRole('ROLE_MANAGER')")
-                .antMatchers("/quan-tri/bai-viet/chinh-sua").access("hasAnyRole('ROLE_MANAGER')")
-                .antMatchers("/quan-tri/bai-viet/danh-sach").access("hasAnyRole('ROLE_MANAGER')");
+                .antMatchers("/quan-tri/**").access("hasAnyRole('ROLE_MANAGER')");
 
 
         // Các trang chỉ dành cho MANAGER

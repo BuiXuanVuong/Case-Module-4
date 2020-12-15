@@ -12,16 +12,16 @@ import javax.persistence.*;
 
 @Table(name = "Accounts", uniqueConstraints = @UniqueConstraint(columnNames = {"User_Name"}))
 @Data
-public class UserEntity implements Serializable {
+public class  UserEntity extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -2054386655979281969L;
 
     public static final String ROLE_MANAGER = "MANAGER";
     public static final String ROLE_EMPLOYEE = "EMPLOYEE";
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
     @NotNull
     @Column(name = "User_Name", length = 20, nullable = false)

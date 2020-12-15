@@ -124,7 +124,6 @@
 
                 <ul class="submenu">
                     <li>
-                        <!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
                         <a th:href="@{/quan-tri/bai-viet/danh-sach(page='1',limit='2')}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý bài viết
@@ -134,7 +133,16 @@
                 </ul>
                 <ul class="submenu">
                     <li>
-                        <!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
+                        <a th:href="@{/quan-tri/the-loai/danh-sach}">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Quản lý thể loại
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+
+                <ul class="submenu">
+                    <li>
                         <a th:href="@{/tai-khoan}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý tài khoản
@@ -211,6 +219,10 @@
 <!--                                                <th>Mật khẩu</th>-->
                                                 <th>Status</th>
                                                 <th>Vai trò</th>
+                                                <th>Người tạo</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Người sửa</th>
+                                                <th>Ngày sửa</th>
                                                 <th>Ảnh đại diện</th>
                                                 <th>Chuyển trạng thái</th>
                                             </tr>
@@ -226,6 +238,10 @@
 <!--                                                    <td><span th:text="${item.encrytedPassword}"/></td>-->
                                                     <td><span th:text="${item.active}"/></td>
                                                     <td><span th:text="${item.userRole}"/></td>
+                                                    <td><span th:text="${item.createdBy}"/></td>
+                                                    <td><span th:text="${item.createdDate}"/></td>
+                                                    <td><span th:text="${item.modifiedBy}"/></td>
+                                                    <td><span th:text="${item.modifiedDate}"/></td>
                                                     <td><img style="width: 40px; height: 40px" th:src="${item.image}"></td>
 
 <!--                                                        <c:url var="updateNewURL" value="/quan-tri/bai-viet/chinh-sua">-->

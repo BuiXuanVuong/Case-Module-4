@@ -15,6 +15,10 @@ public class NewConverter {
         result.setContent(entity.getContent());
         result.setThumbnail(entity.getThumbnail());
         result.setCategoryCode(entity.getCategory().getCode());
+        result.setModifiedDate(entity.getModifiedDate());
+        result.setModifiedBy(entity.getModifiedBy());
+        result.setCreatedDate(entity.getCreatedDate());
+        result.setCreatedBy(entity.getCreatedBy());
         return result;
     }
 

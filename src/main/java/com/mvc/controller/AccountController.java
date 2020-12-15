@@ -80,7 +80,7 @@ public class AccountController {
         userEntity1.setImage(fileName);
 
         accountService.save(userEntity1);
-        return new RedirectView("");
+        return new RedirectView("/dang-nhap");
 
     }
 

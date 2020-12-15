@@ -116,7 +116,6 @@
 
                 <ul class="submenu">
                     <li>
-                        <!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
                         <a th:href="@{/quan-tri/bai-viet/danh-sach(page='1',limit='2')}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý bài viết
@@ -126,7 +125,16 @@
                 </ul>
                 <ul class="submenu">
                     <li>
-                        <!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
+                        <a th:href="@{/quan-tri/the-loai/danh-sach}">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Quản lý thể loại
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+
+                <ul class="submenu">
+                    <li>
                         <a th:href="@{/tai-khoan}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý tài khoản
@@ -210,6 +218,10 @@
                                                 <th><input type="checkbox" id="checkAll"></th>
                                                 <th>Tên bài viết</th>
                                                 <th>Mô tả ngắn</th>
+                                                <th>Người tạo</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Người sửa</th>
+                                                <th>Ngày sửa</th>
                                                 <th>Thao tác</th>
                                             </tr>
                                             </thead>
@@ -222,6 +234,11 @@
 <!--                                                    <td>${item.title}</td>-->
                                                     <td><span th:text="${item.title}"/></td>
                                                     <td><span th:text="${item.shortDescription}"/></td>
+                                                    <td><span th:text="${item.createdBy}"/></td>
+                                                    <td><span th:text="${item.createdDate}"/></td>
+                                                    <td><span th:text="${item.modifiedBy}"/></td>
+                                                    <td><span th:text="${item.modifiedDate}"/></td>
+
                                                     <td>
 <!--                                                        <c:url var="updateNewURL" value="/quan-tri/bai-viet/chinh-sua">-->
 <!--                                                            <c:param name="id" value="${item.id}"/>-->

@@ -13,6 +13,10 @@ public class CategoryConverter {
         result.setId(entity.getId());
         result.setCode(entity.getCode());
         result.setName(entity.getName());
+        result.setModifiedDate(entity.getModifiedDate());
+        result.setModifiedBy(entity.getModifiedBy());
+        result.setCreatedDate(entity.getCreatedDate());
+        result.setCreatedBy(entity.getCreatedBy());
         return result;
     }
 

@@ -17,7 +17,10 @@ public class CommentConverter {
         result.setUserId(entity.getUserEntity().getId());
         result.setNewId(entity.getNewEntity().getId());
         result.setComment(entity.getComment());
-        result.setModifiedDate((Timestamp) entity.getModifiedDate());
+        result.setModifiedDate(entity.getModifiedDate());
+        result.setModifiedBy(entity.getModifiedBy());
+        result.setCreatedDate(entity.getCreatedDate());
+        result.setCreatedBy(entity.getCreatedBy());
         return result;
     }
 

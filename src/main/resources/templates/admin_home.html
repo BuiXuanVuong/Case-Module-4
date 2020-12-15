@@ -116,7 +116,6 @@
 
                 <ul class="submenu">
                     <li>
-<!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
                         <a th:href="@{/quan-tri/bai-viet/danh-sach(page='1',limit='2')}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý bài viết
@@ -126,7 +125,16 @@
                 </ul>
                 <ul class="submenu">
                     <li>
-<!--                        <a href='<c:url value="/quan-tri/bai-viet/danh-sach?page=1&limit=2"/>'>-->
+                        <a th:href="@{/quan-tri/the-loai/danh-sach}">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Quản lý thể loại
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+
+                <ul class="submenu">
+                    <li>
                         <a th:href="@{/tai-khoan}">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Quản lý tài khoản
