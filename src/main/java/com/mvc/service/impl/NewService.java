@@ -97,5 +97,16 @@ public class NewService implements INewService {
         }
     }
 
+    @Override
+    public List<NewDTO> findAllByTitleContaining(String name) {
+        List<NewEntity> newEntities = newRepository.findAllByTitleContaining(name);
+        List<NewDTO> listDTO = new ArrayList<>();
+        for (NewEntity entity: newEntities){
+            NewDTO dto = newConverter.toDTO(entity);
+            listDTO.add(dto);
+        };
+        return listDTO;
+    }
+
 }
 

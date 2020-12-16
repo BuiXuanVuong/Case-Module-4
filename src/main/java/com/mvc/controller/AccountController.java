@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,6 +57,13 @@ public class AccountController {
 
     @PostMapping("/tao-moi")
     public RedirectView createTask(@ModelAttribute UserEntityForm userEntity,HttpServletRequest request, HttpServletResponse response) {
+
+//
+        final List<UserEntity> userEntityList = new LinkedList<>();
+        Iterable<UserEntity> iterableUser = accountService.findAll();
+        iterableUser.forEach(userEntityList::add);
+
+//
         UserEntity userEntity1 = new UserEntity.UserEntityBuilder(userEntity.getUserName())
                 .encrytedPassword(userEntity.getEncrytedPassword())
                 .userRole(userEntity.getUserRole())
@@ -78,6 +86,16 @@ public class AccountController {
         }
         userEntity1.setActive(true);
         userEntity1.setImage(fileName);
+
+
+
+        for (UserEntity user: userEntityList) {
+            if(userEntity1.getUserName().equals(user.getUserName())){
+                RedirectView redirectView = new RedirectView("/tai-khoan/tao-moi?message=1");
+                return redirectView;
+            }
+        }
+
 
         accountService.save(userEntity1);
         return new RedirectView("/dang-nhap");

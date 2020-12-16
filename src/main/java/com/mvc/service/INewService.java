@@ -20,6 +20,7 @@ public interface INewService {
 
     void delete(long[] ids);
 
+    List<NewDTO> findAllByTitleContaining(String name);
 }
 
 

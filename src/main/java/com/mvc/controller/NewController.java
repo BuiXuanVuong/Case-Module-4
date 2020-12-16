@@ -49,10 +49,10 @@ public class NewController {
 
 
         final List<UserEntity> userEntityList = new LinkedList<>();
-
         Iterable<UserEntity> iterableUser = accountService.findAll();
         iterableUser.forEach(userEntityList::add);
         mav.addObject("listUser", userEntityList);
+
 
         model.setListResult(commentService.getAllByNewId(id));
         if(RoleUtil.checkRole().size() > 0) {

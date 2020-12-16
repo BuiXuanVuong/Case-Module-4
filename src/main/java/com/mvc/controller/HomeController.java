@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class HomeController {
@@ -31,12 +31,17 @@ public class HomeController {
 //    private CommentService commentService;
 
     @RequestMapping(value = "/trang-chu")
-    public ModelAndView homePage(HttpServletRequest request, HttpServletResponse response) {
-
-            ModelAndView mav = new ModelAndView("blog");
-
+    public ModelAndView homePage(HttpServletRequest request, HttpServletResponse response,  @RequestParam("search") Optional<String> search) {
+        ModelAndView mav = new ModelAndView("blog");
         NewDTO model = new NewDTO();
-        model.setListResult(newService.findAll());
+        if (search.isPresent()) {
+            List<NewDTO> searchList = newService.findAllByTitleContaining(search.get());
+            model.setListResult(searchList);
+        } else {
+            model.setListResult(newService.findAll());
+        }
+
+
         if(RoleUtil.checkRole().size() > 0) {
             mav.addObject("fullName", RoleUtil.checkRole().get(0));
             mav.addObject("author", RoleUtil.checkRole().get(1));
