@@ -449,6 +449,68 @@
 
 <br>
 
+<!--Advirtiments-->
+<script type="text/javascript">
+    function hide_float_right() {
+        var content = document.getElementById('float_content_right');
+        var hide = document.getElementById('hide_float_right');
+        if (content.style.display == "none")
+        {content.style.display = "block"; hide.innerHTML = '<a href="javascript:hide_float_right()">Tắt quảng cáo [X]</a>'; }
+        else { content.style.display = "none"; hide.innerHTML = '<a href="javascript:hide_float_right()">Xem quảng cáo...</a>';
+        }
+    }
+</script>
+<style>
+    .float-ck { position: fixed; bottom: 0px; z-index: 9000}
+    * html .float-ck {position:absolute;bottom:auto;top:expression(eval (document.documentElement.scrollTop+document.docum entElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))) ;}
+    #float_content_right {border: 1px solid #01AEF0;}
+    #hide_float_right {text-align:right; font-size: 11px;}
+    #hide_float_right a {background: #01AEF0; padding: 2px 4px; color: #FFF;}
+</style>
+<div class="float-ck" style="right: 0px" >
+    <div id="hide_float_right">
+        <a href="javascript:hide_float_right()">Tắt Quảng Cáo [X]</a></div>
+    <div id="float_content_right">
+        <!-- Start quang cao-->
+        <img style="width:400px; height: 300px " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3MjMTreAr6NGikzwVcqBmd8MD-67Amgjkw&usqp=CAU">
+        <!-- End quang cao -->
+    </div>
+</div>
+<!--/Advirtiments-->
+
+<!--Advirtisments side-->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="sl1" class="sl1" style="top: 250px; position: fixed; right: 50%; margin-right: 600px; bottom: 0px;">
+
+    <a rel="nofollow" href="#" title="m88" target="_blank">
+        <img border="0"  width="300" height="350" alt="sbobb" src="https://images.template.net/wp-content/uploads/2016/05/12060153/Green-Advertising-Poster-Creative-Design-Download.jpg">
+
+    </a>
+    </a>
+    <br>
+    <a rel="nofollow" href="#" target="_blank">
+        <img border="0" width="300" height="350" alt="mibet" src="https://thumbs.dreamstime.com/z/trendy-sale-banner-design-different-hand-drawn-organic-shapes-textures-social-media-cute-backdrop-advertising-web-113327888.jpg" >
+    </a>
+
+</div>
+
+
+<!--<div id="sl2" style="top: 210px; position: fixed; left: 50%; margin-left: 600px; bottom: 0px;">-->
+
+<!--    <a rel="nofollow" href="/img/mibetFR1" target="_blank">-->
+<!--        <img border="0" alt="mibet" src="https://pub-static.haozhaopian.net/assets/projects/pages/9079fd41-8dc1-41ac-bca6-d8800f891d49_f20df7c0-a567-40a8-ad5d-d622593724a9_thumb.jpg" width="300" height="600">-->
+<!--    </a>-->
+<!--    <br>-->
+<!--    <a rel="nofollow" href="/img/fabetFR" target="_blank">-->
+<!--        <img border="0" alt="fabet" src="http://www.gmodules.com/gadgets/proxy?container=ig&amp;url=https://i.imgur.com/Mna0bgX.gif" width="120" height="269">-->
+<!--    </a>-->
+<!--</div>-->
+<!--/Advirtisments side-->
 
 <script th:src="@{/admin/paging/jquery.twbsPagination.js}"></script>
 <script th:src="@{/admin/assets/js/bootstrap.min.js}"></script>
