@@ -194,37 +194,42 @@
                                                   class="mobile_logo_width"/></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" th:href="@{/index}">Home <span class="sr-only">(current)</span></a>
-                    </li>
+<!--                    <li class="nav-item active">-->
+<!--                        <a class="nav-link" th:href="@{/index}">Home <span class="sr-only">(current)</span></a>-->
+<!--                    </li>-->
+                    <th:block th:switch="${author}">
+                        <li class="nav-item"><a class="nav-link" th:href="@{/quan-tri/trang-chu}" th:case="ROLE_MANAGER">Admin</a></li>
+                    </th:block>
                     <li class="nav-item ">
                         <a class="nav-link" th:href="@{/trang-chu}">Blog <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" th:href="@{/single}">Single <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" th:href="@{/kinh_te}">Kinh tế</a>
-                            <a class="dropdown-item" th:href="@{/the_thao}">Thể thao</a>
-                            <a class="dropdown-item" th:href="@{/quan_su}">Quân sự</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Community<span
-                                class="sr-only">(current)</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" th:href="@{/chuyen_la}">Chuyện lạ</a>
-                            <a class="dropdown-item" th:href="@{/doi_song}">Đời sống</a>
-                            <a class="dropdown-item" th:href="@{gia_dinh}">Gia đình</a>
-                        </div>
-                    </li>
+                    <th:block th:each="item : ${menu}">
+                        <li class="nav-item" >
+                            <a class="nav-link" th:href="@{'/trang-chu/' + ${item}}">
+
+                                <th:block th:text="${item}">
+
+                                </th:block>
+                                <span class="sr-only">(current)</span>
+                            </a></li>
+                        &nbsp
+                    </th:block>
+                    <th:block th:if="${fullName}">
+                        <li class="nav-item"><a class="nav-link" href="#">Welcome <span th:text="${fullName}"></span></a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/thoat}" >Thoát</a></li>
+                        <li class="nav-item active">
+                            <img style="width: 42px; height: 42px; border-radius: 50%" th:src="@{'http://localhost:8080/' + ${image}}">
+                        </li>
+                    </th:block>
                     <li class="nav-item ">
                         <a class="nav-link" th:href="@{/Contact_us}">Contact <span class="sr-only">(current)</span></a>
                     </li>
+
+                    <th:block th:unless="${fullName}">
+                        <li class="nav-item"><a class="nav-link" th:href="@{/dang-nhap}">Đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/tai-khoan/tao-moi}">Đăng ký</a></li>
+                    </th:block>
+
                 </ul>
             </div>
         </nav>
@@ -248,18 +253,20 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="fh5co_tags_all">
-                    <a href="#" class="fh5co_tagg">Âm nhạc</a>
-                    <a href="#" class="fh5co_tagg">Khoa học</a>
-                    <a href="#" class="fh5co_tagg">Thể thao</a>
-                    <a href="#" class="fh5co_tagg">Hoa hậu</a>
-                    <a href="#" class="fh5co_tagg">Thời trang</a>
-                    <a href="#" class="fh5co_tagg">Tuesday</a>
-                    <a href="#" class="fh5co_tagg">Nhiếp ảnh</a>
-                    <a href="#" class="fh5co_tagg">Đời sống</a>
-                    <a href="#" class="fh5co_tagg">Ẩm thực</a>
-                    <a href="#" class="fh5co_tagg">Gia đình</a>
-                    <a href="#" class="fh5co_tagg">Trường học</a>
-                    <a href="#" class="fh5co_tagg">Tuesday</a>
+                    <a href="https://zingnews.vn/am-nhac.html" class="fh5co_tagg">Âm nhạc
+                        <!--                            <div class="fh5co_news_img"><img th:src="/home/images/anh3.jpg" alt=""/></div>-->
+                    </a>
+                    <a href="https://vnexpress.net/khoa-hoc" class="fh5co_tagg">Khoa học</a>
+                    <a href="https://vnexpress.net/the-thao" class="fh5co_tagg">Thể thao</a>
+                    <a href="https://kenh14.vn/hoa-hau-viet-nam-2020.html" class="fh5co_tagg">Hoa hậu</a>
+                    <a href="https://www.24h.com.vn/thoi-trang-c78.html" class="fh5co_tagg">Thời trang</a>
+                    <a href="https://kenh14.vn/tuesday.html" class="fh5co_tagg">Tuesday</a>
+                    <a href="https://duytom.com/tin-tuc" class="fh5co_tagg">Nhiếp ảnh</a>
+                    <a href="https://vnexpress.net/doi-song" class="fh5co_tagg">Đời sống</a>
+                    <a href="https://www.24h.com.vn/tin-tuc-am-thuc-c677.html#" class="fh5co_tagg">Ẩm thực</a>
+                    <a href="https://vietnamnet.vn/vn/doi-song/gia-dinh/" class="fh5co_tagg">Gia đình</a>
+                    <a href="https://kenh14.vn/truong-hoc.html" class="fh5co_tagg">Trường học</a>
+                    <a href="https://kenh14.vn/tuesday.html" class="fh5co_tagg">Tuesday</a>
                 </div>
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Phổ biến nhất</div>
@@ -269,7 +276,7 @@
                         <img th:src="@{/home/images/anh3.jpg}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Vàng trong nước và thế giới đồng loạt lao dốc.</div>
+                        <div class="most_fh5co_treding_font"><a href="http://baolangson.vn/kinh-te/thi-truong/328846-vang-trong-nuoc-va-the-gioi-dong-loat-lao-doc.html">Vàng trong nước và thế giới đồng loạt lao dốc.</a> </div>
                         <div class="most_fh5co_treding_font_123"> December 13, 2020</div>
                     </div>
                 </div>
@@ -278,9 +285,7 @@
                         <img th:src="@{/home/images/anh1.jpg}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Loạt cây thông Noel khổng lồ thu hút giới trẻ tới
-                            check-in, chụp ảnh.
-                        </div>
+                        <div class="most_fh5co_treding_font"><a href="https://baogialai.com.vn/channel/12369/202012/loat-cay-thong-noel-khong-lo-thu-hut-gioi-tre-toi-check-in-chup-anh-5713734/">Loạt cây thông Noel khổng lồ thu hút giới trẻ tới check-in, chụp ảnh.</a></div>
                         <div class="most_fh5co_treding_font_123"> December 15, 2020</div>
                     </div>
                 </div>
@@ -289,17 +294,35 @@
                         <img th:src="@{/home/images/anh2.jpg}" alt="img" class="fh5co_most_trading"/>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font">
-                            Thoả thuận bí mật giữa Thụy Sĩ và Trung Quốc .
+                        <div class="most_fh5co_treding_font"><a href="https://baotintuc.vn/the-gioi/thoa-thuan-bi-mat-giua-thuy-si-va-trung-quoc-20201210074406356.htm"> Thoả thuận bí mật giữa Thụy Sĩ và Trung Quốc </a>
                         </div>
                         <div class="most_fh5co_treding_font_123"> December 14, 2020</div>
                     </div>
                 </div>
+
+                <div class="row pb-3">
+                    <div class="col-5 align-self-center"><img th:src="@{/home/images/anh9.jpg}" alt="img"
+                                                              class="fh5co_most_trading"/></div>
+                    <div class="col-7 paddding">
+                        <div class="most_fh5co_treding_font"><a href="https://www.youtube.com/watch?v=dFCZrJCsh1k">Lissandra montage</a></div>
+                        <div class="most_fh5co_treding_font_123"> December 17, 2020</div>
+                    </div>
+                </div>
+
                 <div class="row pb-3">
                     <div class="col-5 align-self-center"><img th:src="@{/home/images/anh4.jpg}" alt="img"
                                                               class="fh5co_most_trading"/></div>
                     <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Tìm thấy hành tinh mới có thể tồn tại sự sống.</div>
+                        <div class="most_fh5co_treding_font"><a href="https://vietnamnet.vn/vn/cong-nghe/tim-thay-hanh-tinh-co-dieu-kien-song-tot-hon-trai-dat-680664.html">Tìm thấy hành tinh mới có thể tồn tại sự sống.</a> </div>
+                        <div class="most_fh5co_treding_font_123"> December 16, 2020</div>
+                    </div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-5 align-self-center"><img th:src="@{/home/images/anh8.jpg}" alt="img"
+                                                              class="fh5co_most_trading"/></div>
+
+                    <div class="col-7 paddding">
+                        <div class="most_fh5co_treding_font"><a href="https://www.youtube.com/watch?v=CkxjR2fq7LU" class="">Ra mắt movie Demon Slayer</a></div>
                         <div class="most_fh5co_treding_font_123"> December 15, 2020</div>
                     </div>
                 </div>
@@ -314,7 +337,7 @@
 <!--Comment-->
 <div class="container">
     <div class="be-comment-block">
-        <h1 class="comments-title">Comments (3)</h1>
+        <h1 class="comments-title">Comments</h1>
 
 
 

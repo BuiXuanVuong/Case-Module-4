@@ -125,16 +125,7 @@
 
 
 
-<!--                    <li class="nav-item ">-->
-<!--                        <a class="nav-link" th:href="@{/Contact_us}">Contact <span class="sr-only">(current)</span></a>-->
-<!--                    </li>-->
 
-<!--                    <li class="nav-item ">-->
-<!--                        <a class="nav-link" th:href="@{/dang-nhap}">Login <span class="sr-only">(current)</span></a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item ">-->
-<!--                        <a class="nav-link" th:href="@{/dang-ki}">Signup<span class="sr-only">(current)</span></a>-->
-<!--                    </li>-->
                     <th:block th:if="${fullName}">
                         <li class="nav-item"><a class="nav-link" href="#">Welcome <span th:text="${fullName}"></span></a></li>
                         <li class="nav-item"><a class="nav-link" th:href="@{/thoat}" >Thoát</a></li>
@@ -176,10 +167,12 @@
                                <a  class="fh5co_magna py-2"  th:href="@{'/trang-chu/noi-dung/' + ${item.id}}" th:text="${item.title}" style=" font-family: 'Roboto Slab', serif;" >
                                 </a>
                             <br>
+
                         </a>
 <!--                            <div class="fh5co_consectetur"> Quis nostrud xercitation ullamco laboris nisi aliquip ex ea commodo-->
 <!--                                consequat.-->
 <!--                            </div>-->
+
                                 <div class="fh5co_consectetur" >
                                     <th:block th:text="${item.shortDescription}"></th:block>
                                 </div>
@@ -216,6 +209,7 @@
                             <div class="most_fh5co_treding_font_123">zingnews.vn, 17/12/2020</div>
                         </div>
                     </div>
+
                 </a>
 
                 <a style="color: black" href="https://techmag.vn/galaxy-note21-co-thiet-ke-nhu-galaxy-note20-ultra/">
@@ -227,6 +221,7 @@
                             <div class="most_fh5co_treding_font"> Samsung Galaxy Note21 có thiết kế tương tự như Galaxy Note20 Ultra </div>
                             <div class="most_fh5co_treding_font_123">techmag.vn, 17/12/2020</div>
                         </div>
+
                     </div>
                 </a>
                 <a style="color: black" href="https://vnexpress.net/tiem-kich-f-a-18e-my-cat-canh-bang-cau-nhay-4207034.html">
@@ -239,6 +234,7 @@
                             <div class="most_fh5co_treding_font_123"> vnxpress.vn, 17/12/2020</div>
                         </div>
                     </div>
+
                 </a>
 
                 <a style="color: black" href="https://baomoi.com/2021-hennessey-venom-f5-trinh-lang-cong-suat-1-817-ma-luc-gia-2-1-trieu-usd/r/37358470.epi">
@@ -250,6 +246,7 @@
                             <div class="most_fh5co_treding_font"> 2021 Hennessey Venom F5 trình làng, công suất 1.817 mã lực, giá 2,1 triệu USD </div>
                             <div class="most_fh5co_treding_font_123">Car.vn 17/12/2020</div>
                         </div>
+
                     </div>
                 </a>
                 <a style="color: black" href="https://bongdaplus.vn/ngoai-hang-anh/son-heung-min-xay-dung-thuong-hieu-o-dang-cap-toan-cau-3190872012.html">
@@ -262,6 +259,7 @@
                             <div class="most_fh5co_treding_font_123"> bongdaplus.vn, 17/12/2020</div>
                         </div>
                     </div>
+
                 </a>
                 <a style="color: black" href="https://dantri.com.vn/bat-dong-san/choang-ngop-chung-cu-trieu-do-co-ca-thang-may-dua-o-to-len-tan-can-ho-20201215170320702.htm#dt_source=Home&dt_campaign=MainList&dt_medium=8">
                     <div class="row pb-3">
@@ -272,8 +270,10 @@
                             <div class="most_fh5co_treding_font"> Choáng ngợp chung cư triệu đô, có cả thang máy đưa ô tô lên tận căn hộ </div>
                             <div class="most_fh5co_treding_font_123"> dantri.vn, 17/12/2020</div>
                         </div>
+
                     </div>
                 </a>
+
 
                 <a style="color: black" href=" https://vnexpress.net/uav-tro-chien-bay-cung-tiem-kich-tang-hinh-f-22-f-35-4207002.html">
                     <div class="row pb-3">
@@ -284,8 +284,10 @@
                             <div class="most_fh5co_treding_font"> UAV trợ chiến bay cùng tiêm kích tàng hình F-22, F-35 </div>
                             <div class="most_fh5co_treding_font_123"> fire.vn, 17/12/2020</div>
                         </div>
+
                     </div>
                 </a>
+
 
                 <a style="color: black" href="http://www.vtr.org.vn/giam-doc-9x-nguyen-moc-linh-khang-dinh-minh-bang-tour-tuyen-moi.html">
                     <div class="row pb-3">
@@ -296,6 +298,7 @@
                             <div class="most_fh5co_treding_font"> Giám đốc 9X Nguyễn Mộc Linh: khẳng định mình bằng tour, tuyến mới </div>
                             <div class="most_fh5co_treding_font_123"> Bussiness.vn 17/12/2020</div>
                         </div>
+
                     </div>
                 </a>
                 <a style="color: black" href="https://zingnews.vn/jack-mr-siro-dat-g-dung-dau-de-cu-top-10-zma-2020-post1163709.html/?zatk=3,6744894058596061184,107214494588433866,2689531463553701966,3000.SSZzejyD0jSbZUcknXb2n3pSw_hOLqpSVu3vyCT53ivfbhglWK09WIMGlwo6GaQ19vpqhufFHeehc_kc.1">
@@ -333,16 +336,6 @@
                 </div>
             </div>
         </div>
-<!--        <div class="row mx-0">-->
-<!--            <div class="col-12 text-center pb-4 pt-4">-->
-<!--                <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>-->
-<!--                <a href="#" class="btn_pagging">1</a>-->
-<!--                <a href="#" class="btn_pagging">2</a>-->
-<!--                <a href="#" class="btn_pagging">3</a>-->
-<!--                <a href="#" class="btn_pagging">...</a>-->
-<!--                <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </div>
 <div class="container-fluid pb-4 pt-5">
@@ -365,7 +358,9 @@
             <div class="item px-2">
                 <div class="fh5co_hover_news_img"  style="width: 301px; height: 152px;">
                     <div class="fh5co_news_img">
+
                         <iframe  src="https://www.youtube.com/embed/FLARjLTkOxA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <!--                        <img th:src="@{/home/images/anh7.jpeg}" alt=""/>-->
                     </div>
 <!--                    <div>-->
@@ -377,25 +372,47 @@
             <div class="item px-2">
                 <div class="fh5co_hover_news_img" style="width: 301px; height: 152px;">
                     <div class="fh5co_news_img">
+
                         <iframe src="https://www.youtube.com/embed/NURXNBPMmgQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
+
 <!--                        <img th:src="@{/home/images/anh8.jpg}" alt=""/>-->
                     </div>
-<!--                    <div>-->
-<!--                        <a href="https://www.youtube.com/watch?v=CkxjR2fq7LU" class="d-block fh5co_small_post_heading"><span class="">Demon Slayer movie trailer</span></a>-->
-<!--                        <div class="c_g"><i class="fa fa-clock-o"></i> December 15, 2020</div>-->
-<!--                    </div>-->
                 </div>
             </div>
             <div class="item px-2">
                 <div class="fh5co_hover_news_img" style="width: 301px; height: 152px;">
                     <div class="fh5co_news_img">
-                        <iframe  src="https://www.youtube.com/embed/sV6CHCNyJ14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe  src="https://www.youtube.com/embed/vJt3ORhQFk4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!--                        <img th:src="@{/home/images/anh9.jpg}" alt=""/>-->
                     </div>
 <!--                    <div>-->
 <!--                        <a href="https://www.youtube.com/watch?v=n6PlOaqZKyA" class="d-block fh5co_small_post_heading"><span class="">Lissandra vị tướng cần phải bị cấm</span></a>-->
 <!--                        <div class="c_g"><i class="fa fa-clock-o"></i> Deceber 15, 2020</div>-->
 <!--                    </div>-->
+                </div>
+            </div>
+            <div class="item px-2">
+                <div class="fh5co_hover_news_img" style="width: 301px; height: 152px;">
+                    <div class="fh5co_news_img">
+                        <iframe  src="https://www.youtube.com/embed/uNTQ8tzTyFg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!--                        <img th:src="@{/home/images/anh8.jpg}" alt=""/>-->
+                    </div>
+                </div>
+            </div>
+            <div class="item px-2">
+                <div class="fh5co_hover_news_img" style="width: 301px; height: 152px;">
+                    <div class="fh5co_news_img">
+                        <iframe  src="https://www.youtube.com/embed/BQRrHpNcJXA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!--                        <img th:src="@{/home/images/anh8.jpg}" alt=""/>-->
+                    </div>
+                </div>
+            </div>
+            <div class="item px-2">
+                <div class="fh5co_hover_news_img" style="width: 301px; height: 152px;">
+                    <div class="fh5co_news_img">
+                        <iframe  src="https://www.youtube.com/embed/AwpwdadNezM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!--                        <img th:src="@{/home/images/anh8.jpg}" alt=""/>-->
+                    </div>
                 </div>
             </div>
         </div>
